@@ -1,0 +1,55 @@
+/* База */
+:root { --pink:#ff69b4; --pink-2:#ff85c1; --bg:#fff0f6; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: #333;
+  text-align: center;
+}
+
+/* Шапка */
+header {
+  background: linear-gradient(135deg, #ffb6c1, var(--pink));
+  padding: 32px 16px;
+  color: #fff;
+}
+h1 { margin: 0 0 6px; font-size: 2rem; }
+
+/* Блок "Обо мне" */
+.about {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 16px; padding: 28px 16px;
+}
+.about img {
+  width: 200px; height: 200px; object-fit: cover;
+  border-radius: 50%; border: 5px solid var(--pink);
+}
+
+/* Ссылки */
+.links { padding: 10px 16px 28px; }
+.links a {
+  display: inline-block; margin: 8px; padding: 10px 20px;
+  background: var(--pink); color: #fff; text-decoration: none;
+  border-radius: 22px; transition: transform .2s, background .2s;
+}
+.links a:hover { background: var(--pink-2); transform: scale(1.05); }
+
+/* Подвал */
+footer { background: #ffb6c1; padding: 12px; font-size: 14px; }
+
+/* Анимации */
+.fade-in { opacity: 0; animation: fadeIn 1.2s ease forwards; }
+.fade-in-delay { opacity: 0; animation: fadeIn 1.2s ease .4s forwards; }
+.slide-up { opacity: 0; transform: translateY(28px); animation: slideUp 1.2s ease forwards; }
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes slideUp { to { opacity:1; transform: translateY(0); } }
+
+/* Мобильная версия */
+@media (max-width: 600px) {
+  header { padding: 24px 12px; }
+  h1 { font-size: 1.6rem; }
+  .about img { width: 160px; height: 160px; }
+  .links a { display:block; width:80%; margin:10px auto; }
+}
